@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#D92332">
+    <meta name="description" content="A student-made Angel's Burger website concept.">
+    <title>Angel's Burger | Burger ng Bayan</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+
+        @theme {
+            --color-burger-red: #D92332;
+            --color-cheese-yellow: #FFC928;
+            --color-burger-dark: #242424;
+            --color-cream: #FFF9ED;
+        }
+
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 90px;
+            }
+
+            body {
+                @apply bg-cream text-burger-dark dark:bg-burger-dark dark:text-cream;
+            }
+
+            ::selection {
+                background: #FFC928;
+                color: #242424;
+            }
+        }
+
+        @layer components {
+            .btn-primary {
+                @apply inline-flex items-center justify-center rounded-full bg-burger-red px-6 py-3 font-bold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-cheese-yellow;
+            }
+
+            .btn-secondary {
+                @apply inline-flex items-center justify-center rounded-full border-2 border-burger-dark px-6 py-3 font-bold text-burger-dark hover:bg-burger-dark hover:text-white dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-burger-dark;
+            }
+
+            .nav-link {
+                @apply rounded-lg px-3 py-2 font-semibold text-burger-dark hover:text-burger-red dark:text-cream dark:hover:text-cheese-yellow;
+            }
+
+            .menu-card {
+                @apply overflow-hidden rounded-3xl border border-black/5 bg-white shadow-lg dark:border-white/10 dark:bg-white/5;
+            }
+
+            .form-field {
+                @apply w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-burger-dark outline-none focus:border-burger-red focus:ring-2 focus:ring-burger-red/20 dark:border-white/20 dark:bg-white/5 dark:text-white;
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Scroll progress bar -->
+    <div
+        id="progressBar"
+        class="fixed left-0 top-0 z-[100] h-1 w-full origin-left bg-cheese-yellow"
+        style="transform: scaleX(0)"
+    ></div>
+    
+    <!-- Navigation -->
+    <header
+        id="siteHeader"
+        class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-lg dark:border-white/10 dark:bg-burger-dark/95"
+    >
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+            <a href="#home" class="flex items-center gap-2" aria-label="Angel's Burger home">
+                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-burger-red text-2xl">
+                    🍔
+                </span>
+
+                <span class="leading-tight">
+                    <span class="block text-lg font-black tracking-tight">ANGEL'S</span>
+                    <span class="block text-xs font-bold tracking-[0.2em] text-burger-red">BURGER</span>
+                </span>
+            </a>
+
+            <div class="hidden items-center gap-2 md:flex">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Our Menu</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button
+                    id="darkModeToggle"
+                    type="button"
+                    class="rounded-full border border-black/10 px-3 py-2 text-xl hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10"
+                    aria-label="Switch to light mode"
+                    aria-pressed="true"
+                >
+                    ☀️
+                </button>
+
+                <button
+                    id="menuToggle"
+                    type="button"
+                    class="rounded-xl border border-black/10 px-3 py-2 text-xl dark:border-white/20 md:hidden"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                >
+                    ☰
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile navigation -->
+        <div id="mobileMenu" class="hidden border-t border-black/10 px-5 py-4 dark:border-white/10 md:hidden">
+            <div class="flex flex-col gap-2">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Our Menu</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section id="home" class="relative overflow-hidden">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-2 lg:py-28">
+
+                <div class="relative z-10">
+                    <span class="hero-label inline-flex rounded-full bg-cheese-yellow/30 px-4 py-2 text-sm font-extrabold text-burger-dark dark:text-cheese-yellow">
+                        🍔 SARAP NA BUDGET-FRIENDLY
+                    </span>
+
+                    <h1 class="hero-title mt-6 text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+                        Busog ka na,
+                        <span class="block text-burger-red">happy ka pa!</span>
+                    </h1>
+
+                    <p class="hero-text mt-6 max-w-xl text-lg leading-8 text-gray-600 dark:text-gray-300">
+                        Your favorite burger stop for satisfying cravings.
+                        Discover the taste of a classic Filipino burger experience.
+                    </p>
+
+                    <div class="hero-buttons mt-8 flex flex-wrap gap-4">
+                        <a href="#menu" class="btn-primary">Explore Our Menu →</a>
+                        <a href="#about" class="btn-secondary">Our Story</a>
+
+                        <button
+                            id="replayBtn"
+                            type="button"
+                            class="rounded-full border-2 border-burger-red px-5 py-3 font-bold text-burger-red hover:bg-burger-red hover:text-white"
+                        >
+                            Replay Animation ↻
+                        </button>
+                    </div>
+
+                    <p class="hero-note mt-6 text-sm font-semibold text-gray-500 dark:text-gray-400">
+                        ❤️ Made for burger lovers, everywhere.
+                    </p>
+                </div>
+
+                <div class="hero-art relative mx-auto w-full max-w-xl">
+                    <div class="absolute -inset-4 rounded-[3rem] bg-cheese-yellow/30 blur-2xl"></div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85"
+                        alt="Cheeseburger with fresh toppings"
+                        class="relative h-[340px] w-full rounded-[2rem] object-cover shadow-2xl sm:h-[450px]"
+                        fetchpriority="high"
+                    >
+
+                    <div class="absolute -bottom-5 left-4 rounded-2xl bg-white p-4 shadow-xl dark:bg-gray-900 sm:left-8">
+                        <p class="text-sm font-bold text-gray-500 dark:text-gray-400">GOOD FOOD</p>
+                        <p class="text-xl font-black text-burger-red">GOOD MOOD! ✨</p>
+                    </div>
+
+                    <div class="absolute -right-2 -top-5 flex h-20 w-20 items-center justify-center rounded-full bg-cheese-yellow text-center text-sm font-black text-burger-dark shadow-xl sm:-right-5 sm:h-24 sm:w-24">
+                        BURGER<br>TIME!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section id="about" class="reveal bg-white py-20 dark:bg-white/5 md:py-28">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2">
+
+                <div>
+                    <img
+                        src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=85"
+                        alt="Freshly prepared burger with a toasted bun"
+                        class="h-80 w-full rounded-3xl object-cover shadow-xl md:h-[420px]"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div>
+                    <p class="font-black uppercase tracking-[0.2em] text-burger-red">
+                        About Angel's Burger
+                    </p>
+
+                    <h2 class="mt-4 text-4xl font-black leading-tight sm:text-5xl">
+                        A familiar favorite for every craving.
+                    </h2>
+
+                    <p class="mt-6 leading-8 text-gray-600 dark:text-gray-300">
+                        Angel's Burger is a familiar name in the Philippines, known
+                        for its affordable burger offerings and buy-one-take-one tradition.
+                        This student website concept celebrates that approachable,
+                        everyday burger experience.
+                    </p>
+
+                    <a href="#menu" class="btn-primary mt-8">See the Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu section -->
+        <section id="menu" class="reveal py-20 md:py-28">
+            <div class="mx-auto max-w-7xl px-5 md:px-8">
+
+                <div class="mx-auto mb-12 max-w-2xl text-center">
+                    <p class="font-black uppercase tracking-[0.2em] text-burger-red">
+                        What's on the menu?
+                    </p>
+
+                    <h2 class="mt-4 text-4xl font-black sm:text-5xl">
+                        Bite into happiness.
+                    </h2>
+
+                    <p class="mt-4 leading-7 text-gray-600 dark:text-gray-300">
+                        Explore these burger-inspired favorites. Photos are illustrative;
+                        check official channels for actual products and prices.
+                    </p>
+                </div>
+
+                <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- Menu card 1 -->
+                    <article class="feature-card menu-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+                            alt="Classic cheeseburger with melted cheese"
+                            class="h-56 w-full object-cover"
+                            loading="lazy"
+                        >
+
+                        <div class="p-6">
+                            <span class="text-sm font-bold uppercase tracking-wider text-burger-red">
+                                Classic favorite
+                            </span>
+
+                            <h3 class="mt-2 text-2xl font-black">Beef Burger</h3>
+
+                            <p class="mt-3 leading-7 text-gray-600 dark:text-gray-300">
+                                A classic burger-inspired choice for a quick and satisfying bite.
+                            </p>
+
+                            <a href="#contact" class="btn-primary mt-6 w-full">
+                                Ask About This Item
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Menu card 2 -->
+                    <article class="feature-card menu-card">
+                        <img
+                            src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/duplo_cheeseburguer.jpg"
+                            alt="Double cheeseburger with stacked patties"
+                            class="h-56 w-full object-cover"
+                            loading="lazy"
+                        >
+
+                        <div class="p-6">
+                            <span class="text-sm font-bold uppercase tracking-wider text-burger-red">
+                                Extra cheesy
+                            </span>
+
+                            <h3 class="mt-2 text-2xl font-black">Cheeseburger</h3>
+
+                            <p class="mt-3 leading-7 text-gray-600 dark:text-gray-300">
+                                A burger concept featuring melted cheese and a toasted bun.
+                            </p>
+
+                            <a href="#contact" class="btn-primary mt-6 w-full">
+                                Ask About This Item
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Menu card 3 -->
+                    <article class="feature-card menu-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=85"
+                            alt="Freshly prepared burger served on a bun"
+                            class="h-56 w-full object-cover"
+                            loading="lazy"
+                        >
+
+                        <div class="p-6">
+                            <span class="text-sm font-bold uppercase tracking-wider text-burger-red">
+                                Snack time
+                            </span>
+
+                            <h3 class="mt-2 text-2xl font-black">Burger Meal</h3>
+
+                            <p class="mt-3 leading-7 text-gray-600 dark:text-gray-300">
+                                A hearty burger-inspired meal for your next food craving.
+                            </p>
+
+                            <a href="#contact" class="btn-primary mt-6 w-full">
+                                Ask About This Item
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional section -->
+        <section class="reveal overflow-hidden bg-burger-red py-16 text-white md:py-20">
+            <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-5 text-center md:px-8 lg:flex-row lg:text-left">
+
+                <div>
+                    <p class="font-bold uppercase tracking-[0.2em] text-cheese-yellow">
+                        Got a burger craving?
+                    </p>
+
+                    <h2 class="mt-3 text-4xl font-black sm:text-5xl">
+                        Make today a burger day!
+                    </h2>
+
+                    <p class="mt-4 max-w-2xl leading-7 text-white/85">
+                        Visit your nearest branch to learn about available items and offers.
+                    </p>
+                </div>
+
+                <a
+                    href="#contact"
+                    class="inline-flex shrink-0 items-center justify-center rounded-full bg-cheese-yellow px-7 py-4 font-black text-burger-dark hover:bg-white"
+                >
+                    Get in Touch →
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact" class="reveal py-20 md:py-28">
+            <div class="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-2">
+
+                <div>
+                    <p class="font-black uppercase tracking-[0.2em] text-burger-red">
+                        Contact us
+                    </p>
+
+                    <h2 class="mt-4 text-4xl font-black sm:text-5xl">
+                        Let's talk burgers.
+                    </h2>
+
+                    <p class="mt-6 max-w-lg leading-8 text-gray-600 dark:text-gray-300">
+                        Have a question or feedback? Use this demo form to try out
+                        the website's contact interaction.
+                    </p>
+
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cheese-yellow text-xl">
+                                🍔
+                            </span>
+
+                            <div>
+                                <p class="font-bold">Our focus</p>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Burgers and customer experience
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cheese-yellow text-xl">
+                                📍
+                            </span>
+
+                            <div>
+                                <p class="font-bold">Find a branch</p>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    Check official channels for locations
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form
+                    id="contactForm"
+                    class="rounded-3xl border border-black/5 bg-white p-6 shadow-xl dark:border-white/10 dark:bg-white/5 sm:p-8"
+                >
+                    <div class="mb-5">
+                        <label for="name" class="mb-2 block font-bold">
+                            Your name
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            autocomplete="name"
+                            class="form-field"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="email" class="mb-2 block font-bold">
+                            Email address
+                        </label>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            class="form-field"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="message" class="mb-2 block font-bold">
+                            Your message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            class="form-field resize-y"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-full">
+                        Send Message →
+                    </button>
+
+                    <p
+                        id="formStatus"
+                        class="mt-4 text-sm font-semibold"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                    <p class="mt-2 text-xs leading-5 text-gray-500 dark:text-gray-400">
+                        Demo only: this form displays a confirmation and does not
+                        send data to a server.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-black/10 bg-white py-8 dark:border-white/10 dark:bg-white/5">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-center md:flex-row md:px-8">
+
+            <a href="#home" class="font-black tracking-tight">
+                🍔 ANGEL'S BURGER
+            </a>
+
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                © <span id="year"></span> Student Website Concept. Not an official website.
+            </p>
+
+            <a href="#home" class="font-bold text-burger-red hover:underline">
+                Back to top ↑
+            </a>
+        </div>
+    </footer>
+
+    <!-- Load GSAP libraries before script.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
