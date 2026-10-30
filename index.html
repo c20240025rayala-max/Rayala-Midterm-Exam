@@ -68,53 +68,113 @@
         style="transform: scaleX(0)"></div>
 
     <!-- Navigation -->
-    <header id="siteHeader"
-        class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-lg dark:border-white/10 dark:bg-burger-dark/95">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-            <a href="#home" class="flex items-center gap-2" aria-label="Angel's Burger home">
-                <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-burger-red">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Delicious burger"
-                        class="h-full w-full object-cover">
-                </span>
+    
+<header id="siteHeader"
+    class="sticky top-0 z-50 border-b border-black/5 bg-cream/90 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-burger-dark/90">
 
-                <span class="leading-tight">
-                    <span class="block text-lg font-black tracking-tight">ANGEL'S</span>
-                    <span class="block text-xs font-bold tracking-[0.2em] text-burger-red">BURGER</span>
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+
+        <!-- Brand Logo -->
+        <a href="#home"
+            class="group flex items-center gap-3"
+            aria-label="Angel's Burger home">
+
+            <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-burger-red ring-2 ring-burger-red/20 transition duration-300 group-hover:scale-105 group-hover:ring-4">
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop"
+                    alt="Angel's Burger"
+                    class="h-full w-full object-cover">
+            </span>
+
+            <span class="leading-none">
+                <span class="block text-xl font-black tracking-tight text-gray-900 dark:text-white">
+                    ANGEL'S
                 </span>
+                <span class="mt-1 block text-[10px] font-extrabold tracking-[0.3em] text-burger-red">
+                    BURGER
+                </span>
+            </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden items-center gap-1 md:flex">
+
+            <a href="#home"
+                class="nav-link rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-burger-red/10 hover:text-burger-red">
+                Home
             </a>
 
-            <div class="hidden items-center gap-2 md:flex">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#menu" class="nav-link">Our Menu</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+            <a href="#about"
+                class="nav-link rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-burger-red/10 hover:text-burger-red">
+                About
+            </a>
 
-            <div class="flex items-center gap-2">
-                <button id="darkModeToggle" type="button"
-                    class="rounded-full border border-black/10 px-3 py-2 text-xl hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10"
-                    aria-label="Switch to light mode" aria-pressed="true">
-                    ☀️
-                </button>
+            <a href="#menu"
+                class="nav-link rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-burger-red/10 hover:text-burger-red">
+                Our Menu
+            </a>
 
-                <button id="menuToggle" type="button"
-                    class="rounded-xl border border-black/10 px-3 py-2 text-xl dark:border-white/20 md:hidden"
-                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-                    ☰
-                </button>
-            </div>
-        </nav>
-
-        <!-- Mobile navigation -->
-        <div id="mobileMenu" class="hidden border-t border-black/10 px-5 py-4 dark:border-white/10 md:hidden">
-            <div class="flex flex-col gap-2">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#menu" class="nav-link">Our Menu</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+            <a href="#contact"
+                class="nav-link rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-burger-red/10 hover:text-burger-red">
+                Contact
+            </a>
         </div>
-    </header>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-3">
+
+            <!-- Dark Mode -->
+            <button
+                id="darkModeToggle"
+                type="button"
+                class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 text-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-burger-red hover:text-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-burger-red"
+                aria-label="Switch to light mode"
+                aria-pressed="true">
+                ☀️
+            </button>
+
+            <!-- Mobile Menu Toggle -->
+            <button
+                id="menuToggle"
+                type="button"
+                class="flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 text-xl transition-all duration-300 hover:bg-burger-red hover:text-white dark:border-white/10 md:hidden"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+                ☰
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div
+        id="mobileMenu"
+        class="hidden border-t border-black/5 bg-cream/95 px-5 py-5 dark:border-white/10 dark:bg-burger-dark/95 md:hidden">
+
+        <div class="mx-auto flex max-w-7xl flex-col gap-2">
+
+            <a href="#home" class="nav-link rounded-xl px-4 py-3 text-sm font-semibold transition hover:bg-burger-red/10 hover:text-burger-red">
+                Home
+            </a>
+
+            <a href="#about" class="nav-link rounded-xl px-4 py-3 text-sm font-semibold transition hover:bg-burger-red/10 hover:text-burger-red">
+                About
+            </a>
+
+            <a href="#menu" class="nav-link rounded-xl px-4 py-3 text-sm font-semibold transition hover:bg-burger-red/10 hover:text-burger-red">
+                Our Menu
+            </a>
+
+            <a href="#contact" class="nav-link rounded-xl px-4 py-3 text-sm font-semibold transition hover:bg-burger-red/10 hover:text-burger-red">
+                Contact
+            </a>
+
+        </div>
+    </div>
+
+</header>
+
 
     <main>
         <!-- Hero section -->
