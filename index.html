@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,21 +64,17 @@
 <body class="overflow-x-hidden">
 
     <!-- Scroll progress bar -->
-    <div
-        id="progressBar"
-        class="fixed left-0 top-0 z-[100] h-1 w-full origin-left bg-cheese-yellow"
-        style="transform: scaleX(0)"
-    ></div>
-    
+    <div id="progressBar" class="fixed left-0 top-0 z-[100] h-1 w-full origin-left bg-cheese-yellow"
+        style="transform: scaleX(0)"></div>
+
     <!-- Navigation -->
-    <header
-        id="siteHeader"
-        class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-lg dark:border-white/10 dark:bg-burger-dark/95"
-    >
+    <header id="siteHeader"
+        class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-lg dark:border-white/10 dark:bg-burger-dark/95">
         <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
             <a href="#home" class="flex items-center gap-2" aria-label="Angel's Burger home">
-                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-burger-red text-2xl">
-                    🍔
+                <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-burger-red">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Delicious burger"
+                        class="h-full w-full object-cover">
                 </span>
 
                 <span class="leading-tight">
@@ -95,24 +91,15 @@
             </div>
 
             <div class="flex items-center gap-2">
-                <button
-                    id="darkModeToggle"
-                    type="button"
+                <button id="darkModeToggle" type="button"
                     class="rounded-full border border-black/10 px-3 py-2 text-xl hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10"
-                    aria-label="Switch to light mode"
-                    aria-pressed="true"
-                >
+                    aria-label="Switch to light mode" aria-pressed="true">
                     ☀️
                 </button>
 
-                <button
-                    id="menuToggle"
-                    type="button"
+                <button id="menuToggle" type="button"
                     class="rounded-xl border border-black/10 px-3 py-2 text-xl dark:border-white/20 md:hidden"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false"
-                    aria-controls="mobileMenu"
-                >
+                    aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
                     ☰
                 </button>
             </div>
@@ -135,11 +122,13 @@
             <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-2 lg:py-28">
 
                 <div class="relative z-10">
-                    <span class="hero-label inline-flex rounded-full bg-cheese-yellow/30 px-4 py-2 text-sm font-extrabold text-burger-dark dark:text-cheese-yellow">
+                    <span
+                        class="hero-label inline-flex rounded-full bg-cheese-yellow/30 px-4 py-2 text-sm font-extrabold text-burger-dark dark:text-cheese-yellow">
                         🍔 SARAP NA BUDGET-FRIENDLY
                     </span>
 
-                    <h1 class="hero-title mt-6 text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+                    <h1
+                        class="hero-title mt-6 text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
                         Busog ka na,
                         <span class="block text-burger-red">happy ka pa!</span>
                     </h1>
@@ -153,11 +142,8 @@
                         <a href="#menu" class="btn-primary">Explore Our Menu →</a>
                         <a href="#about" class="btn-secondary">Our Story</a>
 
-                        <button
-                            id="replayBtn"
-                            type="button"
-                            class="rounded-full border-2 border-burger-red px-5 py-3 font-bold text-burger-red hover:bg-burger-red hover:text-white"
-                        >
+                        <button id="replayBtn" type="button"
+                            class="rounded-full border-2 border-burger-red px-5 py-3 font-bold text-burger-red hover:bg-burger-red hover:text-white">
                             Replay Animation ↻
                         </button>
                     </div>
@@ -168,21 +154,21 @@
                 </div>
 
                 <div class="hero-art relative mx-auto w-full max-w-xl">
-                    <div class="absolute -inset-4 rounded-[3rem] bg-cheese-yellow/30 blur-2xl"></div>
+                    <div class="absolute -inset-4 rounded-[3rem] bg-white/30 blur-2xl"></div>
 
-                    <img
-                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85"
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85"
                         alt="Cheeseburger with fresh toppings"
                         class="relative h-[340px] w-full rounded-[2rem] object-cover shadow-2xl sm:h-[450px]"
-                        fetchpriority="high"
-                    >
+                        fetchpriority="high">
 
-                    <div class="absolute -bottom-5 left-4 rounded-2xl bg-white p-4 shadow-xl dark:bg-gray-900 sm:left-8">
+                    <div
+                        class="absolute -bottom-5 left-4 rounded-2xl bg-white p-4 shadow-xl dark:bg-gray-900 sm:left-8">
                         <p class="text-sm font-bold text-gray-500 dark:text-gray-400">GOOD FOOD</p>
                         <p class="text-xl font-black text-burger-red">GOOD MOOD! ✨</p>
                     </div>
 
-                    <div class="absolute -right-2 -top-5 flex h-20 w-20 items-center justify-center rounded-full bg-cheese-yellow text-center text-sm font-black text-burger-dark shadow-xl sm:-right-5 sm:h-24 sm:w-24">
+                    <div
+                        class="absolute -right-2 -top-5 flex h-20 w-20 items-center justify-center rounded-full bg-cheese-yellow text-center text-sm font-black text-burger-dark shadow-xl sm:-right-5 sm:h-24 sm:w-24">
                         BURGER<br>TIME!
                     </div>
                 </div>
@@ -194,12 +180,9 @@
             <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2">
 
                 <div>
-                    <img
-                        src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=85"
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=85"
                         alt="Freshly prepared burger with a toasted bun"
-                        class="h-80 w-full rounded-3xl object-cover shadow-xl md:h-[420px]"
-                        loading="lazy"
-                    >
+                        class="h-80 w-full rounded-3xl object-cover shadow-xl md:h-[420px]" loading="lazy">
                 </div>
 
                 <div>
@@ -246,12 +229,9 @@
 
                     <!-- Menu card 1 -->
                     <article class="feature-card menu-card">
-                        <img
-                            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
-                            alt="Classic cheeseburger with melted cheese"
-                            class="h-56 w-full object-cover"
-                            loading="lazy"
-                        >
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+                            alt="Classic cheeseburger with melted cheese" class="h-56 w-full object-cover"
+                            loading="lazy">
 
                         <div class="p-6">
                             <span class="text-sm font-bold uppercase tracking-wider text-burger-red">
@@ -272,12 +252,9 @@
 
                     <!-- Menu card 2 -->
                     <article class="feature-card menu-card">
-                        <img
-                            src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/duplo_cheeseburguer.jpg"
-                            alt="Double cheeseburger with stacked patties"
-                            class="h-56 w-full object-cover"
-                            loading="lazy"
-                        >
+                        <img src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/duplo_cheeseburguer.jpg"
+                            alt="Double cheeseburger with stacked patties" class="h-56 w-full object-cover"
+                            loading="lazy">
 
                         <div class="p-6">
                             <span class="text-sm font-bold uppercase tracking-wider text-burger-red">
@@ -298,12 +275,9 @@
 
                     <!-- Menu card 3 -->
                     <article class="feature-card menu-card">
-                        <img
-                            src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=85"
-                            alt="Freshly prepared burger served on a bun"
-                            class="h-56 w-full object-cover"
-                            loading="lazy"
-                        >
+                        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=85"
+                            alt="Freshly prepared burger served on a bun" class="h-56 w-full object-cover"
+                            loading="lazy">
 
                         <div class="p-6">
                             <span class="text-sm font-bold uppercase tracking-wider text-burger-red">
@@ -328,7 +302,8 @@
 
         <!-- Promotional section -->
         <section class="reveal overflow-hidden bg-burger-red py-16 text-white md:py-20">
-            <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-5 text-center md:px-8 lg:flex-row lg:text-left">
+            <div
+                class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-5 text-center md:px-8 lg:flex-row lg:text-left">
 
                 <div>
                     <p class="font-bold uppercase tracking-[0.2em] text-cheese-yellow">
@@ -344,10 +319,8 @@
                     </p>
                 </div>
 
-                <a
-                    href="#contact"
-                    class="inline-flex shrink-0 items-center justify-center rounded-full bg-cheese-yellow px-7 py-4 font-black text-burger-dark hover:bg-white"
-                >
+                <a href="#contact"
+                    class="inline-flex shrink-0 items-center justify-center rounded-full bg-cheese-yellow px-7 py-4 font-black text-burger-dark hover:bg-white">
                     Get in Touch →
                 </a>
             </div>
@@ -373,7 +346,8 @@
 
                     <div class="mt-8 space-y-4">
                         <div class="flex items-center gap-4">
-                            <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cheese-yellow text-xl">
+                            <span
+                                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cheese-yellow text-xl">
                                 🍔
                             </span>
 
@@ -386,7 +360,8 @@
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cheese-yellow text-xl">
+                            <span
+                                class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cheese-yellow text-xl">
                                 📍
                             </span>
 
@@ -400,24 +375,15 @@
                     </div>
                 </div>
 
-                <form
-                    id="contactForm"
-                    class="rounded-3xl border border-black/5 bg-white p-6 shadow-xl dark:border-white/10 dark:bg-white/5 sm:p-8"
-                >
+                <form id="contactForm"
+                    class="rounded-3xl border border-black/5 bg-white p-6 shadow-xl dark:border-white/10 dark:bg-white/5 sm:p-8">
                     <div class="mb-5">
                         <label for="name" class="mb-2 block font-bold">
                             Your name
                         </label>
 
-                        <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            autocomplete="name"
-                            class="form-field"
-                            placeholder="Enter your name"
-                            required
-                        >
+                        <input id="name" name="name" type="text" autocomplete="name" class="form-field"
+                            placeholder="Enter your name" required>
                     </div>
 
                     <div class="mb-5">
@@ -425,15 +391,8 @@
                             Email address
                         </label>
 
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            autocomplete="email"
-                            class="form-field"
-                            placeholder="you@example.com"
-                            required
-                        >
+                        <input id="email" name="email" type="email" autocomplete="email" class="form-field"
+                            placeholder="you@example.com" required>
                     </div>
 
                     <div class="mb-5">
@@ -441,26 +400,15 @@
                             Your message
                         </label>
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="5"
-                            class="form-field resize-y"
-                            placeholder="Write your message here..."
-                            required
-                        ></textarea>
+                        <textarea id="message" name="message" rows="5" class="form-field resize-y"
+                            placeholder="Write your message here..." required></textarea>
                     </div>
 
                     <button type="submit" class="btn-primary w-full">
                         Send Message →
                     </button>
 
-                    <p
-                        id="formStatus"
-                        class="mt-4 text-sm font-semibold"
-                        role="status"
-                        aria-live="polite"
-                    ></p>
+                    <p id="formStatus" class="mt-4 text-sm font-semibold" role="status" aria-live="polite"></p>
 
                     <p class="mt-2 text-xs leading-5 text-gray-500 dark:text-gray-400">
                         Demo only: this form displays a confirmation and does not
@@ -473,14 +421,15 @@
 
     <!-- Footer -->
     <footer class="border-t border-black/10 bg-white py-8 dark:border-white/10 dark:bg-white/5">
-        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-center md:flex-row md:px-8">
+        <div
+            class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-center md:flex-row md:px-8">
 
             <a href="#home" class="font-black tracking-tight">
-                🍔 ANGEL'S BURGER
+                ANGEL'S BURGER
             </a>
 
             <p class="text-sm text-gray-600 dark:text-gray-400">
-                © <span id="year"></span> Student Website Concept. Not an official website.
+                © <span id="year"></span> Angels Burger Website.
             </p>
 
             <a href="#home" class="font-bold text-burger-red hover:underline">
@@ -495,4 +444,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
